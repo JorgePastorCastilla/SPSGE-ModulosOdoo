@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_form_todo_task" model="ir.ui.view">
+            <field name="name">Libro Task Form</field>
+            <field name="model">libro.task</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="name"/>
+                                <field name="autor"/>
+                                <field name="paginas"/>
+                                <field name="editorial"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_tree_libro_task" model="ir.ui.view">
+            <field name="name">Libro Task Tree</field>
+            <field name="model">libro.task</field>
+            <field name="arch" type="xml">
+                <tree colors="gray">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <!-- Action to open Libro Task list -->
+        <act_window
+                id="action_libro_task"
+                name="Libro Task"
+                res_model="libro.task"
+                view_mode="list,form"
+        />
+        <!-- Menu item to open Libro Task list -->
+        <menuitem
+                id="menu_libro_task"
+                name="Libro Task"
+                sequence="20"
+                action="action_libro_task"
+        />
+        <menuitem
+                id="menu_libros_tasks"
+                name="Libros Tasks"
+                parent="menu_libro_task"
+                sequence="20"
+                action="action_libro_task"
+        />
+    </data>
+</odoo>
