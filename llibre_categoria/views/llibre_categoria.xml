@@ -4,7 +4,7 @@
         <record id="view_form_llibre_form" model="ir.ui.view">
             <field name="name">Libro Task Form</field>
             <field name="model">libro.task</field>
-            <field name="inherit_id" ref="libro_app.view_form_todo_task"/>
+<!--            <field name="inherit_id" ref="libro_app.view_form_todo_task"/>-->
             <field name="arch" type="xml">
                 <form>
                     <sheet>
@@ -50,6 +50,21 @@
                 </field>
             </field>
         </record>
+
+        <record id="view_filter_libro_task" model="ir.ui.view">
+            <field name="name">Libros Task Filter</field>
+            <field name="model">libro.task</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <filter name="revisados" string="Revisados" domain="[('revisado','=',True)]"/>
+                    <filter name="aprobados" string="Aprobados" domain="[('aprobado','=','si')]"/>
+                    <filter name="pendientes" string="Pendientes" domain="[('aprobado','=','pendiente')]"/>
+                    <filter name="noAprobados" string="No Aprobados" domain="[('aprobado','=','no')]"/>
+                </search>
+            </field>
+        </record>
+
         <act_window
                 id="action_categoria_list"
                 name="Categorias"
