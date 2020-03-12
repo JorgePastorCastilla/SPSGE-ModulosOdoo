@@ -1,7 +1,7 @@
 from odoo import fields, models, api
 
 
-class Karting_diary_racer(models.Model):
+class Diary_racer(models.Model):
     _name = 'karting.diary.racer'
     _description = 'Description'
 

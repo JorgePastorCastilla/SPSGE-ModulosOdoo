@@ -1,7 +1,7 @@
 from odoo import models, fields, api
 
 
-class Karting_racer(models.Model):
+class Diary(models.Model):
     # _inherit = 'libro.task'
     _name = 'karting.diary'
     date = fields.Date(string='Date', required=True)

@@ -1,7 +1,7 @@
 from odoo import fields, models, api
 
 
-class Karting_round (models.Model):
+class Round (models.Model):
     _name = 'karting.round'
     _description = 'Description'
     

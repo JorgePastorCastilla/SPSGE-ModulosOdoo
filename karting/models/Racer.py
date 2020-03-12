@@ -1,8 +1,7 @@
 from odoo import models, fields, api
 
 
-class Karting_racer(models.Model):
-    # _inherit = 'libro.task'
+class Racer(models.Model):
     _name = 'karting.racer'
     # name = fields.Char('Circuit')
     first_name = fields.Char('First name', size=30, required=True)
